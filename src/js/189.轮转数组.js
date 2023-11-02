@@ -9,7 +9,17 @@
  * @param {number[]} nums
  * @param {number} k
  * @return {void} Do not return anything, modify nums in-place instead.
- */
+ * 思路：查看规律
+ * (i + 3) % 7
+原来索引 后来索引
+0       3
+1       4
+2       5
+3       6
+4       0
+5       1
+6       2
+*/
 var rotate = function (nums, k) {
     const len = nums.length
     const result = []
