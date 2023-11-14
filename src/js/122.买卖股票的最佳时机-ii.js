@@ -7,7 +7,7 @@
 // @lc code=start
 /**
  * @param {number[]} prices
- * @return {number}
+ * @return {number}¡
  */
 var maxProfit = function (prices) {
     const length = prices.length
@@ -25,3 +25,16 @@ var maxProfit = function (prices) {
     return dp[length - 1][0]
 }
 // @lc code=end
+var maxProfit = function (prices) {
+    let profit = 0
+    for (let i = 1; i < prices.length; i++) {
+        let tempPre = prices[i - 1]
+        let current = prices[i]
+        profit += Math.max(0, current - tempPre)
+    }
+    return profit
+}
+function ListNode(val, next) {
+    this.val = val === undefined ? 0 : val
+    this.next = next === undefined ? null : next
+}
