@@ -9,7 +9,7 @@
  * @param {number[]} nums
  * @param {number} target
  * @return {number[]}
- * 空间复杂度特别高
+ * 暴力枚举: 时间复杂度O(n²）
  */
 var twoSum = function (nums, target) {
     let result = []
@@ -26,3 +26,24 @@ var twoSum = function (nums, target) {
     return result
 }
 // @lc code=end
+/**
+ *
+ * @param {*} nums
+ * @param {*} target
+ * 使用map记录值和索引,key为值，value为索引
+ * 时间复杂度O(n）
+ */
+var twoSum = function (nums, target) {
+    let result = []
+    const map = {}
+    for (let i = 0; i < nums.length; i++) {
+        const current = nums[i]
+        if (map[target - current] !== undefined) {
+            result.push(map[target - current])
+            result.push(i)
+            break
+        }
+        map[nums[i]] = i
+    }
+    return result
+}
