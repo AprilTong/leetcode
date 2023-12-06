@@ -41,6 +41,21 @@ var singleNumber = function (nums) {
             set.delete(current)
         }
     }
-
     return [...set][0]
+}
+/**
+ *
+ * @param {number[]} nums
+ * @return {number}
+ * 位运算
+ * a^a=0；自己和自己异或等于0
+ * a^0=a；任何数字和0异或还等于他自己
+ * a^b^c=a^c^b；异或运算具有交换律
+ */
+var singleNumber = function (nums) {
+    let result = 0
+    for (let i = 0; i < nums.length; i++) {
+        result = result ^ nums[i]
+    }
+    return result
 }
